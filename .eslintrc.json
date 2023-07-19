@@ -1,0 +1,93 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "airbnb",
+        "airbnb/hooks",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime", // disables React must be in scope error
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:import/recommended",
+        "plugin:prettier/recommended",
+        "prettier"
+    ],
+    // Specifying Parser
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": [
+            "./tsconfig.json"
+        ]
+    },
+    // Configuring third-party plugins
+    "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint",
+        "prettier"
+    ],
+    // Resolve imports
+    "settings": {
+        "import/resolver": {
+            "typescript": {
+                "project": [
+                    "tsconfig.json"
+                ]
+            }
+        },
+        "react": {
+            "version": "18.x"
+        }
+    },
+    "rules": {
+        "import/extensions": "off",
+        "import/prefer-default-export": "off",
+        "no-shadow": "off",
+        "no-unused-vars": "error",
+        "no-use-before-define": [
+            "error",
+            {
+                "functions": true,
+                "classes": true,
+                "variables": false
+            }
+        ],
+        "linebreak-style": 0,
+        // Configure prettier
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto",
+                "singleAttributePerLine": true,
+                "jsxSingleQuote": true
+            }
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error",
+        // disables prop-types validation
+        "react/prop-types": "off",
+        // prevents using function decleration for components 
+        "react/function-component-definition": "off",
+        // prevents using extensions in import
+        "react/jsx-filename-extension": "off",
+        // defualt props no longer reqd
+        "react/require-default-props": "off",
+        "react/no-array-index-key": "off",
+        "react/jsx-props-no-spreading": "off",
+        // Enforce the use of the shorthand syntax.
+        "object-shorthand": "error",
+        "no-console": "warn",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
+        // "@typescript-eslint/ban-ts-comment": 0
+    }
+}
