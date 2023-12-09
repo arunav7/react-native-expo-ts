@@ -90,3 +90,5 @@ export type AlbumType = {
 export type ProductsScreen = {
   title: string;
 };
+
+export type NullishString = string | null;
